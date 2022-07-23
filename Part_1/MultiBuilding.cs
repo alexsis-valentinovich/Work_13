@@ -9,10 +9,28 @@ namespace Part_1
     class MultiBuilding : Building
     {
         int numberFloors;
+        int NumberFloors
+        {
+            get
+            {
+                return numberFloors;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                        numberFloors = value * (-1);
+                }
+                else
+                {
+                    numberFloors = value;
+                }
+            }
+        }
         public MultiBuilding(string adress, int dlina, int shirina, int vusota, int numberFloor)
             : base(adress, dlina, shirina, vusota)
         {
-            this.numberFloors = numberFloor;
+            this.NumberFloors = numberFloor;
         }
         public string Print()
         {
